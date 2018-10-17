@@ -1,6 +1,6 @@
 编号 课程名   课程性质（必修/选修） 所占学时  所占学分  已选人数  人数上限
-1 yuwen bixiu 40 5 30 40
-2 shuxue bixiu 40 5 22 40
-3 yingyu bixiu 35 5 35 40
-4 sixiu xuanxiu 20 3 50 60
-5 makesi xuanxiu 20 2 40 50
+1 yuwen bixiu 40 5 32 40
+2 shuxue bixiu 40 5 25 40
+3 yingyu bixiu 35 5 37 40
+4 sixiu xuanxiu 20 3 51 60
+5 makesi xuanxiu 20 2 41 50
