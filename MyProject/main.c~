@@ -21,15 +21,15 @@ int main()
         switch(x)
         {
             case 1:
-		fprintf(fs,"%s\n\t","进入学生信息:");
+		fprintf(fs,"\n\t","进入学生信息:");
                 student_system();//进入学生信息
                 break;
             case 2:
-		fprintf(fs,"%s\n\t","进入选课信息:");
+		fprintf(fs,"\n\t","进入选课信息:");
                 course_system();//进入选课信息
                 break;
             default :
-		fprintf(fs,"%s\n","退出系统");
+		fprintf(fs,"\n\t","退出系统");
                 system("clean");
                 break;          //退出
         }
