@@ -1,0 +1,5 @@
+1 yuwen bixiu 40 5 30 40
+2 shuxue bixiu 40 5 22 40
+3 yingyu bixiu 35 5 35 40
+4 sixiu xuanxiu 20 3 50 60
+5 makesi xuanxiu 20 2 40 50
