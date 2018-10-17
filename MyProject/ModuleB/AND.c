@@ -13,6 +13,7 @@ int AND(int n)
     for(i=n;i<m+n;i++)
     {
         scanf("%s %s %s %d %d %d %d",cou[i].cou_num,cou[i].cou_name,cou[i].cou_nature,&cou[i].cou_time,&cou[i].cou_credit,&cou[i].cou_stu_num_al,&cou[i].cou_num_limit);
+	fprintf(fs,"%s %s %s %d %d %d %d\n",cou[i].cou_num,cou[i].cou_name,cou[i].cou_nature,cou[i].cou_time,cou[i].cou_credit,cou[i].cou_stu_num_al,cou[i].cou_num_limit);
     }
     SX(m+n);
     for(i=0;i<m+n;i++)

@@ -40,7 +40,10 @@ int Find(int n)
         if('Y'==ch)
         {
             for(i=0;i<m;i++)
+	    {
                 printf("%s %s %s %d\n",t[i].stu_num,t[i].stu_name,t[i].stu_C_al,t[i].stu_credit);
+	fprintf(fs,"%s %s %s %d\n",t[i].stu_num,t[i].stu_name,t[i].stu_C_al,t[i].stu_credit);
+	    }
         }
         getchar();
         printf("是否继续查找（Y/N）：");
@@ -58,11 +61,11 @@ int Find(int n)
             }
         else
         {
-            system("cls");
+            system("clear");
             return 0;
         }
         if(x==3)
-            system("cls");
+            system("clear");
     }
     return 0;
 }

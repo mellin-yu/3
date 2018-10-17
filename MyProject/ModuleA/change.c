@@ -20,6 +20,7 @@ int xh(int n,int dw,char num[])
         i++;
     }
     strcpy(t[dw].stu_num,num);
+    fprintf(fs,"new:%s %s %s %d\n",t[dw].stu_num,t[dw].stu_name,t[dw].stu_C_al,t[dw].stu_credit);
     stu[n]=t[dw];
     n++;
     px(n);
@@ -30,6 +31,7 @@ int xm(int n,int dw,char name[])
 {
     n=del(n,dw);
     strcpy(t[dw].stu_name,name);
+    fprintf(fs,"new:%s %s %s %d\n",t[dw].stu_num,t[dw].stu_name,t[dw].stu_C_al,t[dw].stu_credit);
     stu[n]=t[dw];
     n++;
     px(n);
@@ -83,6 +85,7 @@ int kc(int n,int dw,char les[],int k)
         les[strlen(les)-1]='\0';
     n=del(n,dw);
     strcpy(t[dw].stu_C_al,les);
+    fprintf(fs,"new:%s %s %s %d\n",t[dw].stu_num,t[dw].stu_name,t[dw].stu_C_al,t[dw].stu_credit);
     stu[n]=t[dw];
     n++;
     px(n);
@@ -116,20 +119,16 @@ int change(int n,int k)
         {
             case 1:
                 printf("输入要修改同学的姓名：");
-
                 scanf("%s",name);
-
                 m=xingming(n,name);//按姓名
                 break;
             case 2:
                 printf("输入要修改同学的学号：");
                 scanf("%s",num);
-
                 m=xuehao(n,num);//按学号
-
                 break;
             default :
-
+		fprintf(fs,"%s\n","返回上一级");
                 break;          //返回
         }
         getchar();
@@ -156,12 +155,14 @@ int change(int n,int k)
                 }
             }
             printf("%s %s %s %d",t[dw].stu_num,t[dw].stu_name,t[dw].stu_C_al,t[dw].stu_credit);
+	    
         }
         getchar();
         printf("是否进行修改（Y/N）：");
         scanf("%c",&ch);
         if('Y'==ch)
         {
+	    fprintf(fs,"old:%s %s %s %d\n",t[dw].stu_num,t[dw].stu_name,t[dw].stu_C_al,t[dw].stu_credit);
             printf("++++++++++信息修改++++++++++\n");
             printf("+       1、修改学号        +\n");
             printf("+       2、修改姓名        +\n");
@@ -188,7 +189,6 @@ int change(int n,int k)
                     kc(n,dw,lesson,k);
 
                 default :
-
                     break;
             }
         }

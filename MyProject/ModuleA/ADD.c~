@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "include_pua.h"
 #include "main.h"
 
@@ -16,6 +17,7 @@ int ADD(int n,int k)
     for(i=n;i<m+n;i++)
     {
         scanf("%s %s %s %d",stu[i].stu_num,stu[i].stu_name,stu[i].stu_C_al,&stu[i].stu_credit);
+	fprintf(fs,"%s %s %s %d\n",stu[i].stu_num,stu[i].stu_name,stu[i].stu_C_al,&stu[i].stu_credit);
         a=0;
         for(j=0;j<strlen(stu[i].stu_C_al);j++)
         {

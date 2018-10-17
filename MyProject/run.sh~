@@ -1,0 +1,3 @@
+make -C ./ModuleA/
+make -C ./ModuleB/
+gcc -o main main.c -I./Include/ -L ./RELEASE/*.a

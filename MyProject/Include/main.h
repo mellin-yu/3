@@ -1,10 +1,7 @@
 #ifndef MAIN_H_INCLUDED
 #define MAIN_H_INCLUDED
-
-
-
-
-
+#include <stdio.h>
+FILE *fs;
 typedef struct{
     char stu_num[3];//学号
     char stu_name[10];//姓名

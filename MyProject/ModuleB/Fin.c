@@ -39,7 +39,8 @@ int FIN(int n)
         scanf("%c",&ch);
         if('Y'==ch)
         {
-            printf("%s %s %s %d\n",t[i].stu_num,t[i].stu_name,t[i].stu_C_al,t[i].stu_credit);
+            printf("%s %s %s %d %d %d %d\n",cou[m].cou_num,cou[m].cou_name,cou[m].cou_nature,cou[m].cou_time,cou[m].cou_credit,cou[m].cou_stu_num_al,cou[m].cou_num_limit);
+	    fprintf(fs,"%s %s %s %d %d %d %d\n",cou[m].cou_num,cou[m].cou_name,cou[m].cou_nature,cou[m].cou_time,cou[m].cou_credit,cou[m].cou_stu_num_al,cou[m].cou_num_limit);
         }
         getchar();
         printf("是否继续查找（Y/N）：");

@@ -100,7 +100,7 @@ int Initialization(int k)
 {
     int x,n=0,i;
     FILE *fq;
-    system("cls");
+    system("clear");
     printf("++++++++++++信息初始化++++++++++\n");
     printf("+          1、键盘输入         +\n");
     printf("+          2、文件输入         +\n");
@@ -109,17 +109,21 @@ int Initialization(int k)
     printf("进入选项：");
     scanf("%d",&x);
     if(x==3)
-        system("cls");
+        system("clear");
     switch(x)
     {
         case 1:
+	    fprintf(fs,"%s\t","键盘输入:");
             n=keyboard(k);//键盘输入
+	    fprintf(fs,"n=%d\t",n);
             break;
         case 2:
+	    fprintf(fs,"%s\t","文件输入:");
             n=data(k);//文件输入
+	    fprintf(fs,"n=%d\t",n);
             break;
         default :
-            system("cls");
+            system("clear");
             break;       //返回
     }
     if((fq=fopen("cou.txt","w"))==NULL)

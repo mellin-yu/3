@@ -19,6 +19,7 @@ int bh(int n,int dw,char num[])
         i++;
     }
     strcpy(cou[dw].cou_num,num);
+    fprintf(fs,"new:%s %s %s %d %d %d %d\n",cou[dw].cou_num,cou[dw].cou_name,cou[dw].cou_nature,cou[dw].cou_time,cou[dw].cou_credit,cou[dw].cou_stu_num_al,cou[dw].cou_num_limit);
     SX(n);
     return 0;
 }
@@ -45,9 +46,7 @@ int CHAN(int n,int k)
         {
             case 1:
                 printf("输入要修改课程的姓名：");
-
                 scanf("%s",name);
-
                 dw=keming(n,name);//按课名
                 while(dw==n)
                 {
@@ -60,7 +59,6 @@ int CHAN(int n,int k)
             case 2:
                 printf("输入要修改课程的编号：");
                 scanf("%s",num);
-
                 dw=bianhao(n,num);//按编号
                 while(dw==n)
                 {
@@ -87,6 +85,7 @@ int CHAN(int n,int k)
         scanf("%c",&ch);
         if('Y'==ch)
         {
+	    fprintf(fs,"old:%s %s %s %d %d %d %d\n",cou[dw].cou_num,cou[dw].cou_name,cou[dw].cou_nature,cou[dw].cou_time,cou[dw].cou_credit,cou[dw].cou_stu_num_al,cou[dw].cou_num_limit);
             printf("++++++++++信息修改++++++++++\n");
             printf("+       1、修改编号        +\n");
             printf("+       2、修改课名        +\n");
@@ -108,25 +107,30 @@ int CHAN(int n,int k)
                     printf("输入新课名：");
                     scanf("%s",name);
                     km(k,dw,name);
+		    fprintf(fs,"new:%s %s %s %d %d %d %d\n",cou[dw].cou_num,cou[dw].cou_name,cou[dw].cou_nature,cou[dw].cou_time,cou[dw].cou_credit,cou[dw].cou_stu_num_al,cou[dw].cou_num_limit);
                     break;
                 case 3:
                     printf("输入新性质：");
                     scanf("%s",new_nature);
                     strcpy(cou[dw].cou_nature,new_nature);
+		    fprintf(fs,"new:%s %s %s %d %d %d %d\n",cou[dw].cou_num,cou[dw].cou_name,cou[dw].cou_nature,cou[dw].cou_time,cou[dw].cou_credit,cou[dw].cou_stu_num_al,cou[dw].cou_num_limit);
                 case 4:
                     printf("输入新学时：");
-                    scanf("%s",new_time);
+                    scanf("%d",&new_time);
                     cou[dw].cou_time=new_time;
+		    fprintf(fs,"new:%s %s %s %d %d %d %d\n",cou[dw].cou_num,cou[dw].cou_name,cou[dw].cou_nature,cou[dw].cou_time,cou[dw].cou_credit,cou[dw].cou_stu_num_al,cou[dw].cou_num_limit);
                 case 5:
                     printf("输入新学分：");
-                    scanf("%s",new_credit);
+                    scanf("%d",&new_credit);
                     xf(k,dw,new_credit);
+		    fprintf(fs,"new:%s %s %s %d %d %d %d\n",cou[dw].cou_num,cou[dw].cou_name,cou[dw].cou_nature,cou[dw].cou_time,cou[dw].cou_credit,cou[dw].cou_stu_num_al,cou[dw].cou_num_limit);
                 case 6:
                     printf("输入新上限：");
-                    scanf("%s",new_limit);
+                    scanf("%d",&new_limit);
                     cou[dw].cou_num_limit=new_limit;
+		    fprintf(fs,"new:%s %s %s %d %d %d %d\n",cou[dw].cou_num,cou[dw].cou_name,cou[dw].cou_nature,cou[dw].cou_time,cou[dw].cou_credit,cou[dw].cou_stu_num_al,cou[dw].cou_num_limit);
                 default :
-
+		    fprintf(fs,"%s\n","返回上一级");
                     break;
             }
         }
@@ -151,10 +155,10 @@ int CHAN(int n,int k)
         exit(0);
     for(i=0;i<k;i++)
     {
-        fprintf(fq,"%s %s %s %d",stu[i].stu_num,stu[i].stu_name,stu[i].stu_C_al,&stu[i].stu_credit);
+        fprintf(fq,"%s %s %s %d",stu[i].stu_num,stu[i].stu_name,stu[i].stu_C_al,stu[i].stu_credit);
     }
     fclose(fq);
-    system("cls");
+    system("clear");
     return 0;
 }
 

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "include_pua.h"
 #include "main.h"
 int Delete(int n,int k)
@@ -32,7 +33,7 @@ int Delete(int n,int k)
                 m=xuehao(n,num);//按学号
                 break;
             default :
-
+		fprintf(fs,"%s\n","返回上一级");
                 break;          //返回
         }
         getchar();
@@ -57,6 +58,7 @@ int Delete(int n,int k)
                 }
             }
             printf("%s %s %s %d\n",t[dw].stu_num,t[dw].stu_name,t[dw].stu_C_al,t[dw].stu_credit);
+	    fprintf(fs,"%s %s %s %d\n",t[dw].stu_num,t[dw].stu_name,t[dw].stu_C_al,t[dw].stu_credit);
         }
 
         getchar();

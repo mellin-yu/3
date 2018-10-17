@@ -18,7 +18,7 @@ int course_system()
     k=i;
     fclose(fq);
     px(k);
-    system("cls");
+    system("clear");
     printf("++++++++++课程信息管理模块++++++++++\n");
     printf("+        1、初始化课程信息         +\n");
     printf("+        2、新增课程信息           +\n");
@@ -32,7 +32,8 @@ int course_system()
     scanf("%d",&x);
     if(x==7)
     {
-        system("cls");
+	fprintf(fs,"%s\n","返回上一级");
+        system("clear");
         return 0;
     }
     while(x<6)
@@ -40,22 +41,27 @@ int course_system()
         switch(x)
         {
             case 1:
+		fprintf(fs,"%s\n\t","初始化信息:");
                 n=INIT();//初始化信息
                 break;
             case 2:
+		fprintf(fs,"%s\n\t","新增信息:");
                 n=AND(n);//新增信息
                 break;
             case 3:
+		fprintf(fs,"%s\n\t","修改信息:");
                 CHAN(n,k);//修改信息
                 break;
             case 4:
+		fprintf(fs,"%s\n\t","删除信息:");
                 n=DELE(n,k);//删除信息
                 break;
             case 5:
+		fprintf(fs,"%s\n\t","查看信息:");
                 FIN(n);//查看信息
                 break;
             default :
-
+		fprintf(fs,"%s\n","返回上一级");
                 break;
         }
 
@@ -74,9 +80,11 @@ int course_system()
     }
     if(x==6)
     {
-        system("cls");
+	fprintf(fs,"%s\t","保存并返回:");
+        system("clear");
         printf("请输入保存路径/文件名：");
         scanf("%s",dataname);
+	fprintf(fs,"%s\n",dataname);
         if((fp=fopen(dataname,"w"))==NULL)
             exit(0);
         fprintf(fp,"编号 课程名   课程性质（必修/选修） 所占学时  所占学分  已选人数  人数上限");
@@ -85,11 +93,12 @@ int course_system()
             fprintf(fp,"\n%s %s %s %d %d %d %d",cou[i].cou_num,cou[i].cou_name,cou[i].cou_nature,cou[i].cou_time,cou[i].cou_credit,cou[i].cou_stu_num_al,cou[i].cou_num_limit);
         }
         fclose(fp);
-        system("cls");
+        system("clear");
     }
     if(x==7)
     {
-        system("cls");
+	fprintf(fs,"%s\n","返回上一级");
+        system("clear");
     }
     return 0;
 }

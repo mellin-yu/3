@@ -31,7 +31,7 @@ int DELE(int n,int k)
                 dw=bianhao(n,num);//按学号
                 break;
             default :
-
+		fprintf(fs,"%s\n","返回上一级");
                 break;          //返回
         }
 
@@ -47,6 +47,7 @@ int DELE(int n,int k)
         scanf("%c",&ch);
         if('Y'==ch)
         {
+	    fprintf(fs,"%s %s %s %d %d %d %d\n",cou[dw].cou_num,cou[dw].cou_name,cou[dw].cou_nature,cou[dw].cou_time,cou[dw].cou_credit,cou[dw].cou_stu_num_al,cou[dw].cou_num_limit);
             xf(k,dw,0);
             km(k,dw,"\0");
             n=dell(n,dw);
@@ -76,7 +77,7 @@ int DELE(int n,int k)
         fprintf(fq,"%s %s %s %d\n",stu[i].stu_num,stu[i].stu_name,stu[i].stu_C_al,stu[i].stu_credit);
     }
     fclose(fq);
-    system("cls");
+    system("clear");
     return n;
 }
 
